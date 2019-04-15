@@ -1,16 +1,16 @@
-# ls-vue-components
+# xksquareUI
 
 ## Project setup
 ```
-yarn install
+yarn
 ```
 
 ### Compiles and hot-reloads for development
 ```
-yarn run serve
+yarn serve
 ```
 
 ### Compiles and minifies for production
 ```
-yarn run build
+yarn build
 ```
