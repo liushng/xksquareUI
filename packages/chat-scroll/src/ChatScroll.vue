@@ -111,7 +111,7 @@ export default {
 		},
 		scrollToWhere(){
 			this.$nextTick(()=>{
-				this.BetterScroll.refresh()
+				this.BetterScroll.refresh();
 				let allHeight = document.querySelector("#xk-chat-main").scrollHeight;
 				let height = document.querySelector("#xk-chat-main").offsetHeight;
 				if(!this.pullDownRefresh){
@@ -120,6 +120,9 @@ export default {
 					this.BetterScroll.scrollTo( 0 , - allHeight + this.lastHeight );
 				}
 			})
+		},
+		refresh(){
+			this.BetterScroll.refresh();
 		}
 	},
 	watch: {
