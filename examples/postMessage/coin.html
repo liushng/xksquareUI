@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>coin</title>
+</head>
+<body>
+        <button onclick="getUserInfo()">获取</button>
+        <button onclick="setUserInfo()">设置</button>
+        <iframe src="http://127.0.0.1:5500/localstorage/game.html" id="iframe"></iframe>
+        <!-- http://dev.xksquare.com/game/#/ -->
+        <!-- http://test.xksquare.com/game/#/ -->
+        <!-- http://xkgame.xksquare.com/game/#/ -->
+        <script type="text/javascript">  
+            let iframe = document.getElementById("iframe");
+            iframe.onload = function(){
+                console.log("Local iframe is now loaded.");
+            };
+            window.addEventListener('message', function(e) {
+                var data = e.data;  
+                console.log(data)  
+            }, false);
+            function getUserInfo(){
+                let data = {
+                    type:"getUserInfo"
+                }
+                iframe.contentWindow.postMessage(data,"*");
+            }
+            function setUserInfo(){
+                let data = {
+                    type:"setUserInfo",
+                    value:Math.random()
+                }
+                iframe.contentWindow.postMessage(data,"*");
+            }
+        </script>  
+</body>
+</html>

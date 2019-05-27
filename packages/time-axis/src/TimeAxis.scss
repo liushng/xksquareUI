@@ -26,6 +26,7 @@
             margin-left: -30px;
             border-radius: 50%;
             background: #2196f3;
+            box-shadow: 0 0 10px rgba(0,0,0,0.6);
             box-sizing: border-box;
             border:3px solid #ffffff;
             animation: colorChange 3s infinite linear;
@@ -60,6 +61,7 @@
                     border-radius: 3px;
                     padding: 10px 15px;
                     background: #2196f3;
+                    box-shadow: 0 0 10px rgba(0,0,0,0.3);
                     text-decoration: none;
                     color: #ffffff;
                     &:active{
@@ -78,6 +80,10 @@
         }
         &:nth-child(even){
             flex-direction:row-reverse;
+            .time-content{
+                margin-left: 0;
+                margin-right: calc(5% - 60px)
+            }
             .more-btn{
                 text-align: right;
                 .date{
@@ -123,7 +129,7 @@
             }
             .time-content{
                 width: 80%;
-                margin-left: 80px;
+                margin-left: 80px !important;
                 .more-btn{
                     display: flex;
                     flex-direction: column;
