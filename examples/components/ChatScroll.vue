@@ -1,9 +1,11 @@
 <template>
-  <div class="hello">
-    <chatScroll :tip="tip" :finishLoading.sync="finishLoading" @onLoading="onLoading">
-		<div class="item" v-for="(item,index) in divs" :key="index">{{item}}</div>
-	</chatScroll>
-  </div>
+  	<div class="content">
+	  	<div class="hello">
+			<chatScroll :tip="tip" :finishLoading.sync="finishLoading" @onLoading="onLoading">
+				<div class="item" v-for="(item,index) in divs" :key="index">{{item}}</div>
+			</chatScroll>
+		</div>
+  	</div>
 </template>
 
 <script>
@@ -42,23 +44,22 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
-#app{
-background: #999;
-}
-</style>
 
 <style scoped lang="scss">
-
-.hello{
-	width: 800px;
-	height: 600px;
-	background: #ffffff;
-	.item{
-		width: 100%;
-		height: 100px;
-		background: lightblue;
-		margin-bottom: 10px
+.content{
+	display: flex;
+	justify-content: center;
+	.hello{
+		width: 800px;
+		height: 600px;
+		background: #ffffff;
+		.item{
+			width: 100%;
+			height: 100px;
+			background: lightblue;
+			margin-bottom: 10px
+		}
 	}
 }
+
 </style>
