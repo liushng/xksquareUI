@@ -32,26 +32,12 @@ export default {
             default(){
                 return [
                     {
-                        imgUrl:"http://pic.58pic.com/58pic/11/71/64/90h58PICfG2.jpg",
+                        imgUrl:"http://topmiss.cn/images/panda.jpg",
                         title:"TimeAxis",
                         content:"TimeAxis content",
                         url:"#",
-                        time:"2019/5/27"
-                    },
-                    {
-                        imgUrl:"http://pic.58pic.com/58pic/11/71/64/90h58PICfG2.jpg",
-                        title:"TimeAxis",
-                        content:"TimeAxis content",
-                        url:"#",
-                        time:"2019/5/27"
-                    },
-                    {
-                        imgUrl:"http://pic.58pic.com/58pic/11/71/64/90h58PICfG2.jpg",
-                        title:"TimeAxis",
-                        content:"TimeAxis content",
-                        url:"#",
-                        time:"2019/5/27"
-                    },
+                        time:new Date()
+                    }
                 ]
             }
         },
