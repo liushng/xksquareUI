@@ -1,7 +1,7 @@
 <template>
     <div class = 'time-axis'>
         <div class="time-item" v-for="(item,index) in timeData" :key="index">
-			<div class="time-picture">
+			<div class="time-picture" :class="{colorChange:arr[index]}">
 				<img :src="item.imgUrl">
 			</div> 
 
@@ -23,7 +23,7 @@ export default {
     name:'TimeAxis',
     data () {
         return {
-
+            arr:[]
         };
     },
     props: {
@@ -32,7 +32,7 @@ export default {
             default(){
                 return [
                     {
-                        imgUrl:"http://topmiss.cn/images/panda.jpg",
+                        imgUrl:"http://assets.topmiss.cn/images/panda.jpg",
                         title:"TimeAxis",
                         content:"TimeAxis content",
                         url:"#",
@@ -49,7 +49,14 @@ export default {
     components: {},
     computed: {},
     created() {},
-    mounted() {},
+    mounted() {
+        this.arr.length = this.timeData.length;
+        for (let index = 0; index < this.arr.length; index++) {
+            this.sleep(index*300).then(() => {
+                this.$set(this.arr,index,true);
+            });
+        }
+    },
     methods: {
         getRandomColor(){
             let colorArr = [
@@ -73,6 +80,9 @@ export default {
         },
         fnJump(url){
             this.$router.push(url)
+        },
+        sleep(time){
+            return new Promise(resolve => setTimeout(resolve, time*Math.random()))
         }
     },
     watch: {}
